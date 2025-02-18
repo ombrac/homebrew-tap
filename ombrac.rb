@@ -1,8 +1,6 @@
 class Ombrac < Formula
   desc "Safe, fast, small TCP tunnel using Rust"
-  homepage ""
-  url "https://github.com/ombrac/ombrac/releases/download/v0.3.2/ombrac-aarch64-apple-darwin.tar.gz"
-  sha256 "6eed20358e14fb91daaaf1f464c1fef66ee41c6f32d55c6ce27ce93665506d9b"
+  homepage "https://github.com/ombrac/ombrac"
   license "Apache-2.0"
 
   if OS.mac?
