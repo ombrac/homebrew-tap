@@ -1,6 +1,3 @@
-# Documentation: https://docs.brew.sh/Formula-Cookbook
-#                https://rubydoc.brew.sh/Formula
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class Ombrac < Formula
   desc "Safe, fast, small TCP tunnel using Rust"
   homepage ""
@@ -8,13 +5,23 @@ class Ombrac < Formula
   sha256 "6eed20358e14fb91daaaf1f464c1fef66ee41c6f32d55c6ce27ce93665506d9b"
   license "Apache-2.0"
 
-  # depends_on "cmake" => :build
-
-  # Additional dependency
-  # resource "" do
-  #   url ""
-  #   sha256 ""
-  # end
+  if OS.mac?
+    if Hardware::CPU.arm?
+      url "https://github.com/ombrac/ombrac/releases/download/v0.3.2/ombrac-aarch64-apple-darwin.tar.gz"
+      sha256 "6eed20358e14fb91daaaf1f464c1fef66ee41c6f32d55c6ce27ce93665506d9b"
+    elsif Hardware::CPU.intel?
+      url "https://github.com/ombrac/ombrac/releases/download/v0.3.2/ombrac-x86_64-apple-darwin.tar.gz"
+      sha256 "dfae33027b4254e4de6adda1535248600471b5b99a09349e4cfb697307888125"
+    end
+  elsif OS.linux?
+    if Hardware::CPU.arm?
+      url "https://github.com/ombrac/ombrac/releases/download/v0.3.2/ombrac-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "4a6888ec0fb455a96fcf23ed7f882d7b089936541964ffa4d8b866e97ece4639"
+    elsif Hardware::CPU.intel?
+      url "https://github.com/ombrac/ombrac/releases/download/v0.3.2/ombrac-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "91762776178885c5cf586898224d52ee8854524c43dfacb50603bbd0f955f098"
+    end
+  end
 
   def install
     bin.install "ombrac-client"
@@ -22,15 +29,7 @@ class Ombrac < Formula
   end
 
   test do
-    # `test do` will create, run in and delete a temporary directory.
-    #
-    # This test will fail and we won't accept that! For Homebrew/homebrew-core
-    # this will need to be a test that verifies the functionality of the
-    # software. Run the test with `brew test ombrac`. Options passed
-    # to `brew install` such as `--HEAD` also need to be provided to `brew test`.
-    #
-    # The installed folder is not in the path, so use the entire path to any
-    # executables being tested: `system bin/"program", "do", "something"`.
-    system "false"
+    system "#{bin}/ombrac-client", "--version"
+    system "#{bin}/ombrac-server", "--version"
   end
 end
