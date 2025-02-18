@@ -2,6 +2,7 @@ class Ombrac < Formula
   desc "Safe, fast, small TCP tunnel using Rust"
   homepage "https://github.com/ombrac/ombrac"
   license "Apache-2.0"
+  version "0.3.2"
 
   if OS.mac?
     if Hardware::CPU.arm?
