@@ -18,10 +18,10 @@ VERSION="${LATEST_TAG#v}"
 echo "Latest version: $VERSION"
 
 declare -A PLATFORMS_MAP=(
-  ["darwin-x86_64"]="x86_64-apple-darwin"
-  ["darwin-aarch64"]="aarch64-apple-darwin"
-  ["linux-x86_64"]="x86_64-unknown-linux-gnu"
-  ["linux-aarch64"]="aarch64-unknown-linux-gnu"
+  ["x86_64-apple-darwin"]="x86_64-apple-darwin"
+  ["aarch64-apple-darwin"]="aarch64-apple-darwin"
+  ["x86_64-unknown-linux-gnu"]="x86_64-unknown-linux-gnu"
+  ["aarch64-unknown-linux-gnu"]="aarch64-unknown-linux-gnu"
 )
 
 declare -A SHA256_MAP
