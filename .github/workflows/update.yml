@@ -2,11 +2,15 @@ name: Update
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 12 * * *'
   workflow_dispatch:
 
 jobs:
   update:
+    permissions:
+      contents: write
+      pull-requests: write
+      
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
