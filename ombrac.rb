@@ -2,7 +2,7 @@ class Ombrac < Formula
   desc "Safe, fast, small TCP tunnel using Rust"
   homepage "https://github.com/ombrac/ombrac"
   license "Apache-2.0"
-  version "0.5.2"
+  version "0.5.3"
 
   os = OS.mac? ? "apple-darwin" : "unknown-linux-gnu"
   arch = case Hardware::CPU.arch
@@ -16,10 +16,10 @@ class Ombrac < Formula
   @@url = "https://github.com/ombrac/ombrac/releases/download/v#{version}/#{@@filename}"
 
   @@sha256 = case "#{arch}-#{os}"
-             when "x86_64-apple-darwin" then "883a00495cbeb5ecee59eb952b3bb7f7ada95fc6d2cf8e1b8a66919b81b8bbf3"
-             when "aarch64-apple-darwin" then "e44e317f3b9af5628552db172f8becbf0090b9b52cb71c96fb3d29e8843d302e"
-             when "x86_64-unknown-linux-gnu" then "bd21f89787548121dc2dcb2bd7a2711d8f37b0daf599eb53a5e8498e3ef9fa77"
-             when "aarch64-unknown-linux-gnu" then "1091d89e86879a17da5daa690a891cb44624aebd63631f17ddec337bb86964ac"
+             when "x86_64-apple-darwin" then "91d15a3db89c306c720ce602f698ad811e960541d7b8918f90ef47d0e9ff2bec"
+             when "aarch64-apple-darwin" then "45b97bbc2cd7715d3b9295a6c84164d07ed8e0ffb46bfa32188f378c0f40c48b"
+             when "x86_64-unknown-linux-gnu" then "19a1e966520641127ac0ceb44029cd49395e60b5abfbec2f5b49b78cfb7a03d1"
+             when "aarch64-unknown-linux-gnu" then "b2e571552ff5c42f5ee6d40bb4c96180ac8290b6cddb8f1aff8ed4c646b229bb"
              else
                raise "ombrac: unsupported system #{arch}-#{os}"
              end
