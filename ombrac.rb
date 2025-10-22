@@ -16,10 +16,10 @@ class Ombrac < Formula
   @@url = "https://github.com/ombrac/ombrac/releases/download/v#{version}/#{@@filename}"
 
   @@sha256 = case "#{arch}-#{os}"
-             when "x86_64-apple-darwin" then "5eb4f986d41e68d3c935fa668952b900d7b50e661a52b09f4c9617f8e6fd7b05"
-             when "aarch64-apple-darwin" then "fad927451d73724adc6a04721c6985719996c9afcbc8e5988d3fb8dd0810a827"
-             when "x86_64-unknown-linux-gnu" then "ebb7ea31f3faa45b93691268354d90305b129c90b41b78c5481e36964a576181"
-             when "aarch64-unknown-linux-gnu" then "f90a01b1ea4f713f72440bae165cdba91874b38baab5cd54bb9b892ea17d15e5"
+             when "x86_64-apple-darwin" then "9850383abd27834a31bdd35b736f4a296fe1b2771636cfdf8b041e17a21ec1a5"
+             when "aarch64-apple-darwin" then "4673d0562f3dae93b0a4f22598436b1ac9105d7dd3397470b3dc558d6307e332"
+             when "x86_64-unknown-linux-gnu" then "6b3257d5a1c7c8f7d0193ca4c51192c3e2e68ffa2bb6cd382ce21d320672085e"
+             when "aarch64-unknown-linux-gnu" then "ae37a03ef270a7b80c3981dd8216b6d9a92dc686003e2f28b9048e15d9e56236"
              else
                raise "ombrac: unsupported system #{arch}-#{os}"
              end
